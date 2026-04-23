@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found — Twister Powerlifting">
+  <div class="page-content">
+    <div class="not-found-card">
+      <div class="badge-circle">
+        <span>404</span>
+      </div>
+      <h1 class="nf-title">Page Not Found</h1>
+      <p class="nf-text">The page you're looking for doesn't exist or has been moved.</p>
+      <a href="/" class="nf-btn">Return Home</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  @media (min-width: 640px)  { .page-content { padding: 3rem 1.5rem; } }
+  @media (min-width: 1024px) { .page-content { padding: 3rem 2rem; } }
+
+  .not-found-card {
+    background: var(--color-bg-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    padding: 3rem;
+    border: 1px solid var(--color-border-100);
+    text-align: center;
+  }
+
+  .badge-circle {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, #004c88, #0066bb);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .badge-circle span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .nf-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    background: linear-gradient(to right, #004c88, #0066bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .nf-text {
+    color: var(--color-text-600);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .nf-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #004c88, #0066bb);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .nf-btn:hover {
+    box-shadow: var(--shadow-xl);
+    transform: scale(1.05);
+  }
+</style>

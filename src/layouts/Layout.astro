@@ -1,0 +1,250 @@
+---
+import '../styles/global.css';
+import logo from '../assets/twister_logo.png';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Twister Powerlifting' } = Astro.props;
+const pathname = Astro.url.pathname;
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { path: '/', label: 'Home' },
+  { path: '/rules', label: 'Rules & Scoring' },
+  { path: '/registration', label: 'Register' },
+  { path: '/roster', label: 'Roster', disabled: true },
+  { path: '/records', label: 'Records', disabled: true },
+  { path: '/join', label: 'Join Our Club', disabled: true },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <div class="header-inner">
+          <div class="header-row">
+            <a href="/" class="brand">
+              <Image src={logo} alt="Twister Logo" class="brand-logo" width={56} height={56} />
+              <span class="brand-name">Twister Powerlifting</span>
+            </a>
+
+            <nav class="desktop-nav">
+              {navLinks.map((link) =>
+                link.disabled ? (
+                  <span class="nav-disabled">{link.label}</span>
+                ) : (
+                  <a
+                    href={link.path}
+                    class={`nav-link${pathname === link.path ? ' active' : ''}`}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
+            </nav>
+
+            <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <div id="mobile-menu" class="mobile-menu hidden">
+            {navLinks.map((link) =>
+              link.disabled ? (
+                <div class="mobile-nav-disabled">{link.label}</div>
+              ) : (
+                <a
+                  href={link.path}
+                  class={`mobile-nav-link${pathname === link.path ? ' active' : ''}`}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
+          </div>
+        </div>
+      </header>
+
+      <main class="site-main">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p>&copy; {year} Twister Powerlifting Club. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('hamburger')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobile-menu')?.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---- Header ---- */
+  .site-header {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    color: #111827;
+  }
+
+  .header-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  @media (min-width: 640px)  { .header-inner { padding: 0 1.5rem; } }
+  @media (min-width: 1024px) { .header-inner { padding: 0 2rem; } }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  /* Brand */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: opacity 0.15s;
+  }
+  .brand:hover { opacity: 0.8; }
+
+  .brand-logo {
+    height: 3.5rem;
+    width: auto;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #004c88, #0066bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: none;
+  }
+  @media (min-width: 640px) { .brand-name { display: inline; } }
+
+  /* Desktop nav */
+  .desktop-nav {
+    display: none;
+    gap: 0.25rem;
+  }
+  @media (min-width: 768px) { .desktop-nav { display: flex; } }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #374151;
+    transition: background 0.15s, color 0.15s;
+    font-size: 0.9375rem;
+  }
+  .nav-link:hover { background: #f3f4f6; }
+  .nav-link.active {
+    background: #004c88;
+    color: #fff;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-disabled {
+    padding: 0.5rem 1rem;
+    color: #9ca3af;
+    cursor: not-allowed;
+    font-size: 0.9375rem;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    color: #111827;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .hamburger:hover { background: #f3f4f6; }
+  @media (min-width: 768px) { .hamburger { display: none; } }
+
+  /* Mobile menu */
+  .mobile-menu {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .mobile-menu.hidden { display: none; }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #374151;
+    transition: background 0.15s, color 0.15s;
+  }
+  .mobile-nav-link:hover { background: #f3f4f6; }
+  .mobile-nav-link.active { background: #004c88; color: #fff; }
+
+  .mobile-nav-disabled {
+    padding: 0.5rem 1rem;
+    color: #9ca3af;
+  }
+
+  /* ---- Main ---- */
+  .site-main { flex: 1; }
+
+  /* ---- Footer ---- */
+  .site-footer {
+    background: linear-gradient(to right, #111827, #004c88);
+    color: #fff;
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .footer-inner p { color: #d1d5db; }
+</style>

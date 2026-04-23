@@ -1,0 +1,271 @@
+/* ============================================================
+   Design tokens — derived from the original Tailwind theme
+   ============================================================ */
+:root {
+  /* Brand */
+  --color-primary:       #004c88;
+  --color-primary-light: #0066bb;
+
+  /* Text */
+  --color-text-900: #111827;
+  --color-text-700: #374151;
+  --color-text-600: #6b7280;
+  --color-text-500: #6b7280;
+  --color-text-400: #9ca3af;
+  --color-text-blue-100: #dbeafe;
+
+  /* Backgrounds */
+  --color-bg-white:  #ffffff;
+  --color-bg-50:     #f9fafb;
+  --color-bg-100:    #f3f4f6;
+  --color-blue-50:   #eff6ff;
+
+  /* Borders */
+  --color-border-100: #f3f4f6;
+  --color-border-200: #e5e7eb;
+
+  /* Radius */
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:  0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+  --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,.25);
+}
+
+/* ============================================================
+   Global resets
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-text-900);
+  background: linear-gradient(135deg, #f9fafb 0%, rgba(219,234,254,0.3) 50%, #f9fafb 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   Registration form styles (used by the React island)
+   ============================================================ */
+.reg-wrapper {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .reg-wrapper { padding: 3rem 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .reg-wrapper { padding: 3rem 2rem; }
+}
+
+.reg-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-100);
+}
+
+@media (min-width: 640px) {
+  .reg-card { padding: 3rem; }
+}
+
+.reg-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.reg-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.reg-subtitle {
+  color: var(--color-text-600);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reg-field label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-700);
+  font-weight: 500;
+}
+
+.reg-field label svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.req { color: #ef4444; }
+
+.reg-input,
+.reg-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border-200);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  background: var(--color-bg-50);
+  color: var(--color-text-900);
+  outline: none;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+.reg-input:focus,
+.reg-select:focus {
+  border-color: var(--color-primary);
+  background: var(--color-bg-white);
+  box-shadow: 0 0 0 3px rgba(0, 76, 136, 0.15);
+}
+
+.reg-notice {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, var(--color-blue-50), transparent);
+  border-left: 4px solid var(--color-primary);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+}
+
+.reg-notice-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.reg-notice-inner svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.reg-notice p {
+  font-size: 0.875rem;
+  color: var(--color-text-700);
+}
+
+.reg-submit {
+  width: 100%;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+
+.reg-submit:hover {
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.02);
+}
+
+/* Success state */
+.reg-success {
+  text-align: center;
+}
+
+.reg-success-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #4ade80, #16a34a);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.reg-success-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.reg-success-msg {
+  font-size: 1.125rem;
+  color: var(--color-text-700);
+  margin-bottom: 1.5rem;
+}
+
+.reg-success-sub {
+  color: var(--color-text-600);
+  margin-bottom: 2rem;
+}
+
+.reg-reset-btn {
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+
+.reg-reset-btn:hover {
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.05);
+}
