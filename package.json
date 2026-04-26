@@ -12,11 +12,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.2.1",
     "@astrojs/react": "^5.0.3",
+    "@hookform/resolvers": "^5.2.2",
+    "@supabase/supabase-js": "^2.104.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^6.1.8",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-hook-form": "^7.73.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "typescript": "^5.9.3"
   }
 }

@@ -147,6 +147,7 @@ img {
 }
 
 .req { color: #ef4444; }
+.reg-error { color: #ef4444; font-size: 0.8rem; margin-top: 0.25rem; }
 
 .reg-input,
 .reg-select {

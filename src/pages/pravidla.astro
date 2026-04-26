@@ -2,16 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Rules & Scoring — Twister Powerlifting">
+<Layout title="Pravidla & Bodování — Twister Powerlifting">
   <div class="page-content">
     <div class="rules-card">
 
       <!-- Page header -->
       <div class="page-header">
-        <div class="page-badge">Competition Guidelines</div>
-        <h1 class="page-title">Rules &amp; Scoring</h1>
+        <div class="page-badge">Pravidla soutěže</div>
+        <h1 class="page-title">Pravidla &amp; Bodování</h1>
         <p class="page-subtitle">
-          Official IPF-compliant regulations for the Twister Powerlifting Competition 2026
+          Oficiální pravidla pro Twister Cup 2026
+
+        </p>
+        <p class="page-subtitle">
+          Celé znení pravidel je k dispozici na <a href="https://docs.google.com/document/d/1PSWTmVCJhY7tvZwP9bZ30s92c_0Rztf_o6GqRhzJsdE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">tomto odkazu</a>.
         </p>
       </div>
 
@@ -25,57 +29,17 @@ import Layout from '../layouts/Layout.astro';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>
-            Competition Format
+            Formát soutěže
           </h2>
           <p class="section-text">
-            The competition follows the IPF (International Powerlifting Federation) rules and regulations.
-            Each lifter will perform three attempts for each of the three main lifts in the following order:
+            Soutěž se řídí pravidly silového trojboje.
+            Každý soutěžící má 3 pokusy na každou z tří disciplín v tomto pořadí:
           </p>
           <ol class="ordered-list">
-            <li>Squat</li>
+            <li>Dřep</li>
             <li>Bench Press</li>
             <li>Deadlift</li>
           </ol>
-        </section>
-
-        <!-- Weight Classes -->
-        <section class="rule-section">
-          <h2 class="section-title">
-            <div class="section-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-              </svg>
-            </div>
-            Weight Classes
-          </h2>
-          <div class="weight-grid">
-            <div class="weight-card">
-              <h3 class="weight-title">Men's Categories</h3>
-              <ul class="weight-list">
-                <li>&bull; 59 kg</li>
-                <li>&bull; 66 kg</li>
-                <li>&bull; 74 kg</li>
-                <li>&bull; 83 kg</li>
-                <li>&bull; 93 kg</li>
-                <li>&bull; 105 kg</li>
-                <li>&bull; 120 kg</li>
-                <li>&bull; 120+ kg</li>
-              </ul>
-            </div>
-            <div class="weight-card">
-              <h3 class="weight-title">Women's Categories</h3>
-              <ul class="weight-list">
-                <li>&bull; 47 kg</li>
-                <li>&bull; 52 kg</li>
-                <li>&bull; 57 kg</li>
-                <li>&bull; 63 kg</li>
-                <li>&bull; 69 kg</li>
-                <li>&bull; 76 kg</li>
-                <li>&bull; 84 kg</li>
-                <li>&bull; 84+ kg</li>
-              </ul>
-            </div>
-          </div>
         </section>
 
         <!-- Scoring System -->
@@ -86,39 +50,36 @@ import Layout from '../layouts/Layout.astro';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
-            Scoring System
+            Bodování
           </h2>
           <div class="scoring-list">
             <div class="scoring-card">
               <h3 class="scoring-label">
                 <span class="scoring-num">1</span>
-                Total Score
+                Součet bodů
               </h3>
               <p>
-                Your total score is the sum of your best successful attempt for each of the three lifts
-                (Squat + Bench Press + Deadlift). The competitor with the highest total in their weight
-                class wins.
+                Tvoje body se počítají součtem tvých nejlepších úspěšných pokusů v každé ze tří kategorií
+                (Dřep + Bench Press + Deadlift), vynásobených koeficientem tělesné hmotnosti.
               </p>
             </div>
             <div class="scoring-card">
               <h3 class="scoring-label">
                 <span class="scoring-num">2</span>
-                Wilks Score
+                Dots koeficient
               </h3>
               <p>
-                The Wilks formula is used to compare lifters of different body weights. The overall
-                best lifter award is determined by the highest Wilks coefficient across all weight classes.
+                Pro výpočet celkového skóre se využívá koeficient Dots.
               </p>
             </div>
             <div class="scoring-card">
               <h3 class="scoring-label">
                 <span class="scoring-num">3</span>
-                Attempt Selection
+                Výběr pokusů
               </h3>
               <p>
-                Lifters must declare their opening weight before the competition. Each subsequent attempt
-                must be at least 2.5 kg heavier than the previous successful attempt. You may pass on
-                attempts if needed.
+                Soutěžící musí nahlásit první pokusy ke každé disciplíně před začátkem soutěže při vážení.
+                Každý další pokus musí být alespoň o 2,5kg těžší, nez pokus předchozí.
               </p>
             </div>
           </div>
@@ -132,32 +93,31 @@ import Layout from '../layouts/Layout.astro';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            Lift Requirements
+            Pravidla disciplín
           </h2>
           <div class="lift-list">
             <div class="lift-item">
-              <h3 class="lift-name">Squat</h3>
+              <h3 class="lift-name">Dřep</h3>
               <ul class="disc-list">
-                <li>The top of the thighs at the hip joint must be lower than the top of the knees</li>
-                <li>Wait for the "squat" and "rack" commands from the head judge</li>
-                <li>The lifter must stand erect with knees locked at completion</li>
+                <li>Závodník zahájí pohyb dolů po povelu Start, odloží činku po povelu Odložit.</li>
+                <li>Hloubka dřepu musí být minimálně paralélní s úrovní kolene.</li>
+                <li>Závodník se musí dostat do vzpřímeného postoje s prolými koleny.</li>
               </ul>
             </div>
             <div class="lift-item">
               <h3 class="lift-name">Bench Press</h3>
               <ul class="disc-list">
-                <li>The bar must touch the chest</li>
-                <li>Wait for the "press" and "rack" commands from the head judge</li>
-                <li>Buttocks must remain in contact with the bench</li>
-                <li>Feet must remain flat on the floor</li>
+                <li>Závodník zahájí pohyb dolů po povelu Start, pohyb nahoru po povelu Tlak, odloží činku po povelu Odložit.</li>
+                <li>Osa se musí zastavit na hrudníku.</li>
+                <li>Hýždě musí zůstat na lavičce, chodidla se nesmí zvednout ze země.</li>
               </ul>
             </div>
             <div class="lift-item">
               <h3 class="lift-name">Deadlift</h3>
               <ul class="disc-list">
-                <li>The lifter must stand erect with knees locked and shoulders back</li>
-                <li>Wait for the "down" command from the head judge before lowering the bar</li>
-                <li>Supporting the bar on the thighs is not permitted</li>
+                <li>Závodník zahájí pozved bez povelu, odloží činku po povelu Dolů.</li>
+                <li>Po povelu Dolů, musí závodník činku kontrolovaně položit, nemůže ji pustit.</li>
+                <li>Tahání osy po stehnech není povoleno.</li>
               </ul>
             </div>
           </div>
@@ -171,15 +131,36 @@ import Layout from '../layouts/Layout.astro';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            Equipment Regulations
+            Povolení vybavení
           </h2>
           <ul class="disc-list">
-            <li>Approved lifting singlet or appropriate athletic wear</li>
-            <li>Non-supportive lifting belt (maximum 10cm width)</li>
-            <li>Wrist wraps (maximum 1m length)</li>
-            <li>Knee sleeves (non-supportive, maximum 30cm length)</li>
-            <li>Chalk is permitted</li>
-            <li>No lifting suits or supportive gear in raw division</li>
+            <li>Dřep - bandáže na lokty a zápěstí, návleky na kolena a lokty.</li>
+            <li>Bench Press - bandáže na zápěstí, návleky na lokty a kolena.</li>
+            <li>Deadlift - trhačky, bandáže na zápěstí, návleky na kolena</li>
+            <li>Obuv není nutná pro žádnou z disciplín.</li>
+            <li>Singlet není nutný pro žádnou z disciplín.</li>
+            <li>Opasek je povolen na každou z disciplín.</li>
+          </ul>
+        </section>
+
+        <section class="rule-section">
+          <h2 class="section-title">
+            <div class="section-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+              </svg>
+            </div>
+            Registrační poplatek
+          </h2>
+          <p class="section-text">
+            Každý soutěžící musí uhradit registrační poplatek.
+          </p>
+          <p class="section-text">
+            V ceně je: uvítací baliček, fotky ze soutěže, ceny a medaile pro první 3 místa.
+          </p>
+          <ul class="disc-list">
+            <li>Pro členy fitness centra Twister je cena 500,-.</li>
+            <li>Pro nečleny fitness centra Twister je cena 600,-.</li>
           </ul>
         </section>
 
@@ -193,9 +174,9 @@ import Layout from '../layouts/Layout.astro';
               </svg>
             </div>
             <div>
-              <h3 class="notice-title">Important Notice</h3>
+              <h3 class="notice-title">Celé pravidla</h3>
               <p class="notice-text">
-                All lifters must attend the mandatory rules briefing 30 minutes before the competition start time. Failure to attend may result in disqualification.
+                Plné znění pravidel je k dispozici <a href="https://docs.google.com/document/d/1PSWTmVCJhY7tvZwP9bZ30s92c_0Rztf_o6GqRhzJsdE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">zde</a>.
               </p>
             </div>
           </div>
@@ -432,4 +413,8 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .notice-text { color: #bfdbfe; }
+
+  a {
+    text-decoration: underline;
+  }
 </style>

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import logo from '../assets/twister_logo.png';
+import logo from '../assets/twister_logo_modre.png';
 import { Image } from 'astro:assets';
 
 interface Props {
@@ -12,16 +12,16 @@ const pathname = Astro.url.pathname;
 const year = new Date().getFullYear();
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/rules', label: 'Rules & Scoring' },
-  { path: '/registration', label: 'Register' },
-  { path: '/roster', label: 'Roster', disabled: true },
-  { path: '/records', label: 'Records', disabled: true },
-  { path: '/join', label: 'Join Our Club', disabled: true },
+  { path: '/', label: 'Domů' },
+  { path: '/pravidla', label: 'Pravidla & Bodování' },
+  { path: '/registrace', label: 'Registrace' },
+  { path: '/roster', label: 'Členové', disabled: true },
+  { path: '/records', label: 'Rekordy', disabled: true },
+  { path: '/join', label: 'Přidej se k nám', disabled: true },
 ];
 ---
 
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,7 +33,7 @@ const navLinks = [
         <div class="header-inner">
           <div class="header-row">
             <a href="/" class="brand">
-              <Image src={logo} alt="Twister Logo" class="brand-logo" width={56} height={56} />
+              <Image src={logo} alt="Twister Logo" class="brand-logo" width={56} height={56} densities={[1, 2]} />
               <span class="brand-name">Twister Powerlifting</span>
             </a>
 
