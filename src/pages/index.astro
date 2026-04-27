@@ -87,7 +87,7 @@ import CheckIcon from '../components/CheckIcon.astro';
         <ul class="checklist">
           <li class="checklist-item">
             <CheckIcon class="check-icon" />
-            <span>Otevřeno pro všechny - od začátečníků do elitních závodníků</span>
+            <span>Otevřeno pro všechny zájemce o trojboj</span>
           </li>
           <li class="checklist-item">
             <CheckIcon class="check-icon" />
@@ -334,7 +334,7 @@ import CheckIcon from '../components/CheckIcon.astro';
   }
   .checklist-item:hover { background: rgba(239,246,255,0.5); }
 
-  .check-icon {
+  :global(.check-icon) {
     color: #004c88;
     flex-shrink: 0;
     margin-top: 0.125rem;
